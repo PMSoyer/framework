@@ -31,7 +31,9 @@
             $twig = new Environment($loader, []);
 
             // add custom function as a Twig function //
-            $twig->addFunction(new TwigFunction('asset', [Functions::class, 'generateAssetUrl']));
+            $twig -> addFunction(new TwigFunction('asset', [Functions::class, 'generateAssetUrl']));
+            // add global variables as a Twig variable //
+            $twig -> addGlobal('env', $_ENV);
 
             return $twig;
         }
