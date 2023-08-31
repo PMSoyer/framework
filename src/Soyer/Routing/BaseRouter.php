@@ -12,6 +12,7 @@
     use Soyer\Routing\Middleware\ActiveMiddleware;
     use ReflectionFunction;
     use Exception;
+    use Closure;
 
 
 
@@ -56,11 +57,11 @@
         /**
          * Add route function
          * 
-         * @param string $path
-         * @param array $method
-         * @param callable $handler
+         * @param string  $path
+         * @param array   $method
+         * @param Closure $handler
          */
-        public static function route(string $path, array $methods, callable $handler, array $middlewares = []) {
+        public static function route(string $path, array $methods, Closure $handler, array $middlewares = []) {
 
             foreach ($methods as $method) {
                 // Call the method to check for duplicate paths
