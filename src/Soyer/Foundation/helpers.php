@@ -7,7 +7,7 @@
      */
 
 
-    use Soyer\PMSoyer as app;
+    use Soyer\PMSoyer;
     use Soyer\View\Template;
 
     if (!function_exists('render_template')) {
@@ -19,8 +19,8 @@
          */
 
         function render_template(string $name, array $context = []){
-            $templates_path = isset(app::$config["TEMPLATES_PATH"]) ? app::$config["TEMPLATES_PATH"] : "templates/";
-            $twig = Template::create(__DIR__ . "/../../../../../../" . $templates_path);
+            $templates_path = $_ENV["HOME_PATH"] . "templates/";
+            $twig = Template::create($templates_path);
             $template = $twig->load($name);
             echo $template->render($context);
             return;
@@ -64,7 +64,7 @@
          */
 
         function abort(int $statusCode, string $message = '') {
-            app::handleException($statusCode, $message);
+            PMSoyer::handleException($statusCode, $message);
             die();
         }
     }
