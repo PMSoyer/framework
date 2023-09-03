@@ -27,19 +27,6 @@
         }
     }
 
-    if (!function_exists('basic_render_template')) {
-        /**
-         * This function basic_render_template
-         *
-         * @param  string  $name
-         */
-
-        function basic_render_template(string $name){
-            $templates_path = isset(app::$config["TEMPLATES_PATH"]) ? app::$config["TEMPLATES_PATH"] : "templates/";
-            return require_once(__DIR__ . "/../../../../../../" . $templates_path . $name);
-        }
-    }
-
     if (!function_exists('jsonify')) {
         /**
          * Get an instance of the redirector.
