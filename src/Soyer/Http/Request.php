@@ -56,6 +56,14 @@
 
 
         /**
+         * This request data json header
+         * 
+         * @var array
+         */
+        public static $jsonr; // is mean json request
+
+
+        /**
          * This request data
          * 
          * @var array
@@ -80,6 +88,7 @@
             self::$request = $_REQUEST;
             self::$full_path = $_SERVER['REQUEST_URI'];
             self::$form = $_POST;
+            self::$jsonr = json_decode(file_get_contents('php://input'), true);
             self::$args = $_GET;
             self::$files = $_FILES;
         }
