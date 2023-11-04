@@ -14,7 +14,7 @@
     /**
      * This is application class
      */
-    class PMSoyer extends BaseRouter{
+    class PMSoyer extends BaseRouter {
 
         
         /**

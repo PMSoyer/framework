@@ -10,6 +10,9 @@
     namespace Soyer\View\Custom;
 
 
+    use Soyer\Http\Request;
+
+
     /**
      * This is class store function for twig engine
      */
@@ -21,11 +24,23 @@
          * 
          * @param string $static
          * @param string $assetPath
+         * @return string
          */
-        public static function generateAssetUrl(string $static, string $assetPath){
+        public static function generateAssetUrl(string $static, string $assetPath): string {
             $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
             $domain = $protocol . $_SERVER['HTTP_HOST'];
             return rtrim($domain, '/') . '/' . $static . '/' . ltrim($assetPath, '/');
+        }
+
+
+        /**
+         * isNavActive function
+         * 
+         * @param string $path
+         * @return bool
+         */
+        public static function isNavActive(string $path): bool {
+            return $path == Request::$path;
         }
 
     }
