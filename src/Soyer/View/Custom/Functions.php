@@ -37,10 +37,9 @@
          * isNavActive function
          * 
          * @param string $path
-         * @return bool
          */
-        public static function isNavActive(string $path): bool {
-            return $path == Request::$path;
+        public static function isNavActive(string $path, string $result = "active") {
+            echo ($path == Request::$path ? $result : "");
         }
 
     }
