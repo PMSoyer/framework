@@ -32,6 +32,7 @@
 
             // add custom function as a Twig function //
             $twig -> addFunction(new TwigFunction('asset', [Functions::class, 'generateAssetUrl']));
+            $twig -> addFunction(new TwigFunction('is_nav', [Functions::class, 'isNavActive']));
             // add global variables as a Twig variable //
             $twig -> addGlobal('env', $_ENV);
 
