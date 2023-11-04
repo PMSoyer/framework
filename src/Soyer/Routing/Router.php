@@ -20,7 +20,7 @@
      * This is class main router
      * 
      */
-    class BaseRouter {
+    class Router {
 
 
         /**

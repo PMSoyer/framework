@@ -8,13 +8,13 @@
 
 
     namespace Soyer;
-    use Soyer\Routing\BaseRouter;
+    use Soyer\Routing\Router;
 
 
     /**
      * This is application class
      */
-    class PMSoyer extends BaseRouter {
+    class PMSoyer extends Router {
 
         
         /**
