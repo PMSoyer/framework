@@ -13,6 +13,7 @@
     use Twig\Environment;
     use Twig\TwigFunction;
     use Soyer\View\Custom\Functions;
+    use Twig\Extra\Intl\IntlExtension;
 
 
     /**
@@ -35,6 +36,8 @@
             $twig -> addFunction(new TwigFunction('is_nav', [Functions::class, 'isNavActive']));
             // add global variables as a Twig variable //
             $twig -> addGlobal('env', $_ENV);
+            // add extension
+            $twig -> addExtension(new IntlExtension());
 
             return $twig;
         }

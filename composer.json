@@ -22,7 +22,8 @@
         ]
     },
     "require": {
-        "twig/twig": "^3.5.1"
+        "twig/twig": "^3.5.1",
+        "twig/intl-extra": "^3.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
