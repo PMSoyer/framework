@@ -13,7 +13,7 @@
     use Twig\Environment;
     use Twig\TwigFunction;
     use Soyer\View\Custom\Functions;
-    use Twig\Extra\Intl\IntlExtension;
+    // use Twig\Extra\Intl\IntlExtension; // remove
 
 
     /**
@@ -37,7 +37,7 @@
             // add global variables as a Twig variable //
             $twig -> addGlobal('env', $_ENV);
             // add extension
-            $twig -> addExtension(new IntlExtension());
+            // $twig -> addExtension(new IntlExtension()); // remove
 
             return $twig;
         }
