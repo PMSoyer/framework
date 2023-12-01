@@ -13,6 +13,7 @@
     use Twig\Environment;
     use Twig\TwigFunction;
     use Soyer\View\Custom\Functions;
+    use Soyer\View\Custom\UserCustomView;
     // use Twig\Extra\Intl\IntlExtension; // remove
 
 
@@ -34,10 +35,21 @@
             // add custom function as a Twig function //
             $twig -> addFunction(new TwigFunction('asset', [Functions::class, 'generateAssetUrl']));
             $twig -> addFunction(new TwigFunction('is_nav', [Functions::class, 'isNavActive']));
+
             // add global variables as a Twig variable //
             $twig -> addGlobal('env', $_ENV);
+
             // add extension
             // $twig -> addExtension(new IntlExtension()); // remove
+
+            // load user custom view
+            foreach (UserCustomView::getGlobalVariables() as $key => $value) {
+                $twig -> addGlobal($value["name"], $value["value"]);
+            }
+
+            foreach (UserCustomView::getFunctions() as $key => $value) {
+                $twig -> addFunction(new TwigFunction($value["name"], $value["callable"]));
+            }
 
             return $twig;
         }
