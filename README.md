@@ -31,6 +31,3 @@ This is a PHP Web framework, Quick and easy to use.
 
     Thanks for your support! 🎉
 </p>
-
-## License
-The PMSoyer framework is open-sourced software licensed under the [MIT license](https://github.com/mantvmass/PMSoyer/blob/main/LICENSE).
